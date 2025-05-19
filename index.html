@@ -18,7 +18,7 @@
         <p>The rules are simple, find the boat, you win!</p>
     </header>
     <main>
-            <div class="battleGrid">
+            <div class="battleGrid ">
                 <div class="container">
                     <div class="row">                       
                             <div  class="clickSq col-2"></div>
@@ -38,7 +38,10 @@
                             <div  class="clickSq col-2"></div>                       
                     </div>
                 </div>
-                <div id="gameResponse"></div>
+                <div id="gameResponse" class="gameResponse"></div>
+                <div class="mt-2">
+                    <button id="resetBtn" class="btn btn-primary">Start Over</button>
+                </div>
     </main>
     <audio id="bgMusic" src="./MEDIA/KC_BS Ship to Ship Combat 150BPM FULLMIX.mp3" loop></audio>
     <script src="./JS/app.js"></script>

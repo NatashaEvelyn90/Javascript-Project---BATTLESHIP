@@ -4,7 +4,7 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const bgMusic = document.getElementById("bgMusic");
 
-yesBtn.addEventListener("click", introSong)
+yesBtn.addEventListener("click", introSong);
 
 function introSong(){
     bgMusic.play();
@@ -52,3 +52,12 @@ playingGrid.forEach((cell, index) => {
     }
 
 });
+
+//! Refreshes page
+
+const refresh = document.getElementById("resetBtn");
+refresh.addEventListener("click", reload);
+
+function reload() {
+    window.location.reload();
+}

@@ -13,6 +13,10 @@
     opacity: 0.9;
 }
 
+.gameResponse {
+    color: yellow;
+    font-weight: bolder;
+}
 
 
 .correct {
