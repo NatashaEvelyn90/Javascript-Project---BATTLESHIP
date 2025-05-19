@@ -1,43 +1,54 @@
-const playingGrid = document.querySelectorAll("#clickSq");
-const squares = 9;
-let battleship;
-console.log(squares)
+//!Background music
 
-function randomLocation() {
-    return Math.floor(Math.random() * squares);
-}
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const bgMusic = document.getElementById("bgMusic");
 
+yesBtn.addEventListener("click", introSong)
 
-// squares.addEventListener("click", playGames);
+function introSong(){
+    bgMusic.play();
+    document.querySelector("header").style.display = "none"; //!Doing this makes the header disappear. 
+};
 
-// function playGames() {
-// battleship = randomLocation();
-// }
-// playGames();
-// randomLocation();
-
-
-// function squareScramble(array) {
-//     return Math.floor(Math.random() * array.length);
-// }
-// const specialArray = [0,1,2,3,4,5,6,7,8];
-// const specialSquares = squareScramble(specialArray);
-// // console.log(specialSquares);
+//* alert is similar to prompt but it does not allow you to type anything. It just pops up a message. 
+noBtn.addEventListener("click",goodbye);
+function goodbye() {
+    alert("Maybe next time!");
+    document.querySelector("header").style.display = "none";
+    document.querySelector(".battleGrid").style.display = "none";
+    document.querySelector("img").style.display = "none";
+};
 
 
-// let pickSquares = document.querySelectorAll("#clickSq");
-// pickSquares.addEventListener("click", playGames);
 
-// function playGames() {
-//     let bFound = document.querySelector(".correct");
-//     let bLost = document.querySelector(".incorrect");
+//! Setting up board
 
-//     for (i = 0; i < pickSquares.length; i++) {
-//         if (specialSquares === bFound) {
-//             pickSquares[i].style.color = "green"
-//         } else if (specialSquares === bLost) {
-//             pickSquares[i].style.color = "red"
-//         }
-//     }
-//  }
-//  playGames();
+const playingGrid = document.querySelectorAll(".clickSq");
+const randomGrid = Math.floor(Math.random() * 9);
+
+
+//? The "Cell" in this case would be the equalivent of the #ClickSq. this is letting you know that all of these are going to be selected.
+// * forEach() is used to say like "Hey, for each cell in the grid, something must be done." in this case, the cells are the squares in the DIV's. 
+
+// ? The index is related to where in the #clickSq is located. the ClickSq at this point is an array. 
+
+playingGrid.forEach((cell, index) => {
+    cell.addEventListener("click", randomLocation) ;
+    function randomLocation(){
+
+        const message = document.getElementById("gameResponse")
+
+        if (index === randomGrid) {
+            cell.classList.add("correct");
+            cell.innerText = "Ouch!"
+            message.innerText = "YOU SUNK THE BATTLESHIP. YOU WIN!!!"
+
+        } else {
+            cell.classList.add("incorrect");
+            cell.innerText = "Keep Searching..."
+            message.innerText = "TRY AGAIN NEXT TIME!"
+        }              
+    }
+
+});

@@ -5,8 +5,8 @@
    opacity: 0.7;
 }
 
-#clickSq {
-     width: 200px;
+.clickSq {
+     width: 150px;
     height: 200px;
     background-color: black;
     border: 2px solid pink;
@@ -14,13 +14,6 @@
 }
 
 
-/* .squares {
-    width: 200px;
-    height: 200px;
-    background-color: black;
-    border: 2px solid pink;
-    opacity: 0.9;
-} */
 
 .correct {
     background-color: green ;

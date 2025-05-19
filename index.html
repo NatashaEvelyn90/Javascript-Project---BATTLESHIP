@@ -13,57 +13,34 @@
     </div>
     <header>
         <h1>ARE YOU READY TO PLAY THE GAME?</h1>
+        <button id="yesBtn" class="btn btn-success mx-2">YES</button>
+        <button id="noBtn" class="btn btn-danger mx-2">NO</button>
         <p>The rules are simple, find the boat, you win!</p>
     </header>
     <main>
-        <section>
             <div class="battleGrid">
                 <div class="container">
-                    <div class="row">
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
+                    <div class="row">                       
+                            <div  class="clickSq col-2"></div>
+                            <div  class="clickSq col-2"></div>                   
+                            <div  class="clickSq col-2"></div>                      
                     </div>
             
-                     <div class="row">
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
+                     <div class="row">                     
+                            <div  class="clickSq col-2"></div>                     
+                            <div  class="clickSq col-2"></div>                                           
+                            <div  class="clickSq col-2"></div>                       
                     </div>
             
-                     <div class="row">
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
-                        
-                        <!-- <button class="squares"> -->
-                            <div id="clickSq" class="correct incorrect col-4"></div>
-                        <!-- </button> -->
+                     <div class="row">                    
+                            <div  class="clickSq col-2"></div>                                          
+                            <div  class="clickSq col-2"></div>                    
+                            <div  class="clickSq col-2"></div>                       
                     </div>
-                </article>
-            </div>
-        </section>
+                </div>
+                <div id="gameResponse"></div>
     </main>
-
+    <audio id="bgMusic" src="./MEDIA/KC_BS Ship to Ship Combat 150BPM FULLMIX.mp3" loop></audio>
     <script src="./JS/app.js"></script>
 </body>
 </html>
