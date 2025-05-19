@@ -1,9 +1,26 @@
-.squares {
-    width: 150px;
-    height: 150px;
+.backgroundImg {
+   width: 100%;
+   position: fixed;
+   z-index: -99;
+   opacity: 0.7;
+}
+
+#clickSq {
+     width: 200px;
+    height: 200px;
     background-color: black;
     border: 2px solid pink;
+    opacity: 0.9;
 }
+
+
+/* .squares {
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    border: 2px solid pink;
+    opacity: 0.9;
+} */
 
 .correct {
     background-color: green ;
