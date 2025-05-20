@@ -5,45 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="shortcut icon" href="./MEDIA/battleship-vehicle-3d-illustration-free-png.webp" type="image/x-icon">
     <title>Battleship</title>
 </head>
 <body>
     <div>
-        <img src="./MEDIA/U.S._Navy_guided-missile_frigate_FFG(X)_artist_rendering,_30_April_2020_(200430-N-NO101-150).jpeg" alt="Constellation class Frigate" class="backgroundImg">
+        <img src="./MEDIA/U.S._Navy_guided-missile_frigate_FFG(X)_artist_rendering,_30_April_2020_(200430-N-NO101-150).jpeg" alt="Constellation class Frigate" class="backgroundImg d-sm-block d-none">
+    </div>
+    <div>
+        <img src="./MEDIA/battleship-Tall.jpg" alt="a battleship" class="battleTall d-block d-sm-none">
     </div>
     <header>
         <h1>ARE YOU READY TO PLAY THE GAME?</h1>
-        <button id="yesBtn" class="btn btn-success mx-2">YES</button>
-        <button id="noBtn" class="btn btn-danger mx-2">NO</button>
+        <div class="d-flex justify-content-center">
+            <button id="yesBtn" class="btn btn-success mx-2">YES</button>
+            <button id="noBtn" class="btn btn-danger mx-2">NO</button>
+
+        </div>
         <p>The rules are simple, find the boat, you win!</p>
     </header>
     <main>
-            <div class="battleGrid ">
+            <div class="battleGrid">
                 <div class="container">
-                    <div class="row">                       
-                            <div  class="clickSq col-2"></div>
-                            <div  class="clickSq col-2"></div>                   
-                            <div  class="clickSq col-2"></div>                      
+                    <div class="row justify-content-center">                       
+                            <div class="clickSq col col-sm-2"></div>
+                            <div class="clickSq col col-sm-2"></div>                   
+                            <div class="clickSq col col-sm-2"></div>                      
                     </div>
             
-                     <div class="row">                     
-                            <div  class="clickSq col-2"></div>                     
-                            <div  class="clickSq col-2"></div>                                           
-                            <div  class="clickSq col-2"></div>                       
+                     <div class="row justify-content-center">                     
+                            <div class="clickSq col col-sm-2"></div>                     
+                            <div class="clickSq col col-sm-2"></div>                                           
+                            <div class="clickSq col col-sm-2"></div>                       
                     </div>
             
-                     <div class="row">                    
-                            <div  class="clickSq col-2"></div>                                          
-                            <div  class="clickSq col-2"></div>                    
-                            <div  class="clickSq col-2"></div>                       
+                     <div class="row justify-content-center">                    
+                            <div class="clickSq col col-sm-2"></div>                                          
+                            <div class="clickSq col col-sm-2"></div>                    
+                            <div class="clickSq col col-sm-2"></div>                       
                     </div>
                 </div>
-                <div id="gameResponse" class="gameResponse"></div>
-                <div class="mt-2">
+                <!-- This is where the messages will appear if you win or lose -->
+                <div id="gameResponse" class="gameResponse"></div> 
+                <!-- This is the reset button -->
+                <div class="mt-2 d-flex justify-content-center">
                     <button id="resetBtn" class="btn btn-primary">Start Over</button>
                 </div>
     </main>
     <audio id="bgMusic" src="./MEDIA/KC_BS Ship to Ship Combat 150BPM FULLMIX.mp3" loop></audio>
+    <audio id="victory" src="./MEDIA/0009 SEQ_BATTLESHIPGAMEWON.mp3" loop></audio>
     <script src="./JS/app.js"></script>
 </body>
 </html>

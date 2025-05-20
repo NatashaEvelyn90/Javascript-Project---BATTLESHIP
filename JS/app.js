@@ -1,48 +1,43 @@
-//!Background music
+//!Background music + Y/N buttons
 
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const bgMusic = document.getElementById("bgMusic");
+const yesBtn = document.getElementById("yesBtn"); //? This is the yes button. This will start the game and music
+const noBtn = document.getElementById("noBtn");//? This is the no button. This will close everything out 
+const bgMusic = document.getElementById("bgMusic"); //? This is the audio.
+const victory = document.getElementById("victory"); //? This is the victory theme that will play
 
-yesBtn.addEventListener("click", introSong);
-
-function introSong(){
-    bgMusic.play();
-    document.querySelector("header").style.display = "none"; //!Doing this makes the header disappear. 
-};
-
-//* alert is similar to prompt but it does not allow you to type anything. It just pops up a message. 
-noBtn.addEventListener("click",goodbye);
-function goodbye() {
-    alert("Maybe next time!");
-    document.querySelector("header").style.display = "none";
-    document.querySelector(".battleGrid").style.display = "none";
-    document.querySelector("img").style.display = "none";
-};
-
-
+yesBtn.addEventListener("click", startGame);//? using this function allows us to start the music and begin the game. SEE FUNCTION BELOW 
 
 //! Setting up board
 
-const playingGrid = document.querySelectorAll(".clickSq");
-const randomGrid = Math.floor(Math.random() * 9);
+const playingGrid = document.querySelectorAll(".clickSq");//? this is the <div> squares that you created. We are selecting them.
+const randomGrid = Math.floor(Math.random() * 9);//? This is to set up the placement of the battleship. THIS IS THE SHIP. 
 
+//? The word "cell" is basically being used to replace the word #ClickSq. This is letting you know that all of these are going to be selected.
+//* forEach() is used to say like "Hey, for each cell in the grid, something must be done." in this case, the "cells" are the squares being selected. 
+// ? The "index" word we used is related to where in the #clickSq the battleship located. This would be considered your array. 
 
-//? The "Cell" in this case would be the equalivent of the #ClickSq. this is letting you know that all of these are going to be selected.
-// * forEach() is used to say like "Hey, for each cell in the grid, something must be done." in this case, the cells are the squares in the DIV's. 
+let gameOver = false;
 
-// ? The index is related to where in the #clickSq is located. the ClickSq at this point is an array. 
+function startGame(){
+    bgMusic.play();
+    document.querySelector("header").style.display = "none"; //! Doing this makes the header disappear. 
 
-playingGrid.forEach((cell, index) => {
+    playingGrid.forEach((cell, index) => {
     cell.addEventListener("click", randomLocation) ;
     function randomLocation(){
+        if (gameOver) return;
 
-        const message = document.getElementById("gameResponse")
+        const message = document.getElementById("gameResponse");
 
         if (index === randomGrid) {
+            //? the .classList.add in this case is adding your styling from your CSS. 
             cell.classList.add("correct");
-            cell.innerText = "Ouch!"
-            message.innerText = "YOU SUNK THE BATTLESHIP. YOU WIN!!!"
+            cell.innerText = "Ouch!";
+            message.innerText = "YOU SUNK THE BATTLESHIP. YOU WIN!!!";
+            gameOver = true;
+
+            bgMusic.pause(); //? pauses original music 
+            victory.play();
 
         } else {
             cell.classList.add("incorrect");
@@ -50,8 +45,26 @@ playingGrid.forEach((cell, index) => {
             message.innerText = "TRY AGAIN NEXT TIME!"
         }              
     }
+    })
+}
 
-});
+
+//* alert is similar to prompt but it does not allow you to type anything. It just pops up whatever message you put in the (). 
+
+noBtn.addEventListener("click",goodbye);
+
+function goodbye() {
+    alert("Maybe next time!");
+    document.querySelector("header").style.display = "none"; //! removes header. It disappears
+    document.querySelector(".battleGrid").style.display = "none"; //! removes the whole grid. No game allowed
+    document.querySelector("img").style.display = "none"; //! removes the whole background image. All that would be left is a plain document
+};
+
+// -----------------------------------------------------------
+
+
+
+
 
 //! Refreshes page
 

@@ -1,16 +1,27 @@
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
 .backgroundImg {
-   width: 100%;
    position: fixed;
-   z-index: -99;
-   opacity: 0.7;
+        z-index: -99;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        opacity: .5;
 }
 
 .clickSq {
-     width: 150px;
+     width: 100%;
     height: 200px;
     background-color: black;
     border: 2px solid pink;
-    opacity: 0.9;
+    opacity: 1;
+    margin: 5px;
+    color: white;
 }
 
 .gameResponse {
@@ -27,4 +38,43 @@
 .incorrect {
     background-color: red;
     border: 2px solid black;
+}
+
+.gameResponse {
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    
+    
+    
+    .battleTall {
+        position: absolute;
+        z-index: -99;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        opacity: .5;
+    }
+    
+    .clickSq {
+     width: 100%;
+    height: 100px;
+    background-color: black;
+    border: 2px solid pink;
+    opacity: 1;
+    margin: 5px;
+    color: white;
+    }
+
+    h1 {
+        text-align: center;
+    }
+    
+    p {
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    
+    
 }
